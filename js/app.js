@@ -200,14 +200,6 @@ function initCategoryDiscovery() {
       }
     });
   }
-
-  // Hero Grace Okafor card click opens farmer profile
-  const heroFarmerCard = document.getElementById('hero-farmer-card-trigger');
-  if (heroFarmerCard) {
-    heroFarmerCard.addEventListener('click', () => {
-      openFarmerProfileModal('farmer-1');
-    });
-  }
 }
 
 function selectCategory(catId, shouldRender = true) {
