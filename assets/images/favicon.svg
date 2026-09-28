@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="gofreshBg" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#1B4432"/>
+      <stop offset="50%" stop-color="#123124"/>
+      <stop offset="100%" stop-color="#0A1C14"/>
+    </linearGradient>
+
+    <!-- Leaf Gradients -->
+    <linearGradient id="leafGradLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5B8E22"/>
+      <stop offset="60%" stop-color="#8BB83C"/>
+      <stop offset="100%" stop-color="#B2DE44"/>
+    </linearGradient>
+
+    <linearGradient id="leafGradRight" x1="20%" y1="80%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#8BB83C"/>
+      <stop offset="50%" stop-color="#D7E85B"/>
+      <stop offset="100%" stop-color="#EDF888"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D7E85B"/>
+      <stop offset="100%" stop-color="#F2FB9B"/>
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <filter id="leafGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#05120B" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="116" fill="url(#gofreshBg)"/>
+
+  <!-- Subtle Inner Border -->
+  <rect x="10" y="10" width="492" height="492" rx="108" fill="none" stroke="rgba(215, 232, 91, 0.22)" stroke-width="4.5"/>
+
+  <!-- Brand Elements Group -->
+  <g id="brand-mark">
+    <!-- Sprout / Foliage Motif with Glow -->
+    <g filter="url(#leafGlow)">
+      <!-- Left Leaf (Deeper green, organic tilt) -->
+      <path d="M 238 226 C 160 205 130 135 210 125 C 255 140 262 195 238 226 Z" fill="url(#leafGradLeft)"/>
+      <!-- Left leaf spine highlight -->
+      <path d="M 205 155 Q 228 190 236 222" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+      <!-- Right Leaf (Vibrant electric lime) -->
+      <path d="M 248 232 C 265 135 385 100 376 182 C 370 236 295 258 248 232 Z" fill="url(#leafGradRight)"/>
+      <!-- Right leaf spine highlight -->
+      <path d="M 285 218 Q 330 180 348 142" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+      <!-- Central Stem rooted downwards -->
+      <path d="M 241 224 Q 248 256 244 278" stroke="#8BB83C" stroke-width="9" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- Brand Typography "GoFresh" with drop shadow -->
+    <g filter="url(#softGlow)">
+      <text x="256" y="375" 
+            font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="102" 
+            font-weight="800" 
+            letter-spacing="-3" 
+            text-anchor="middle">
+        <tspan fill="#F5F2E8">Go</tspan><tspan fill="url(#textGrad)">Fresh</tspan>
+      </text>
+
+      <!-- Subtitle Badge -->
+      <text x="256" y="426" 
+            font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="22" 
+            font-weight="700" 
+            letter-spacing="7" 
+            fill="rgba(245, 242, 232, 0.75)" 
+            text-anchor="middle">
+        FARM MARKET
+      </text>
+    </g>
+  </g>
+</svg>
