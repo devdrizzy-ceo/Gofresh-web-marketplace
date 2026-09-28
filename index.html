@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoFresh · Fresh From The Farm. Straight To Your Table.</title>
+  <meta name="description" content="GoFresh connects Nigerian farmers directly with buyers. Discover farm-fresh vegetables, grains, tubers, fruits, meat, and fish sourced locally and delivered within 24 hours.">
+  <meta property="og:title" content="GoFresh · Direct Agricultural Marketplace">
+  <meta property="og:description" content="Sourcing fresh local produce directly from verified farmers in Nigeria.">
+  <meta property="og:image" content="assets/images/hero_farmer.jpg">
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/marketplace.css">
+</head>
+<body>
+
+  <!-- =======================================================================
+       SITE HEADER
+       ======================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container-wide header-inner">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" id="brand-logo-link" aria-label="GoFresh Home">
+        <span class="logo-badge" aria-hidden="true">🌱</span>
+        <span>Go<span class="logo-text-fresh">Fresh</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active" id="nav-home">Home</a>
+        <a href="#goods" class="nav-link" id="nav-goods">Shop Goods</a>
+        <a href="#how-it-works" class="nav-link" id="nav-how">How It Works</a>
+        <a href="#about" class="nav-link" id="nav-about">About Us</a>
+        <a href="#footer-contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <!-- Quick Search Trigger -->
+        <button class="header-search-btn" id="header-search-trigger" aria-label="Search products" title="Search products">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search</span>
+        </button>
+
+        <!-- User Session / Role Pill -->
+        <button class="user-role-pill" id="user-role-btn" aria-label="User Account or Role Switcher">
+          <span class="user-avatar-mini" id="user-avatar-mini">👤</span>
+          <span id="user-role-label">Sign In / Role</span>
+        </button>
+
+        <!-- Cart Trigger Button -->
+        <button class="cart-trigger" id="cart-drawer-trigger" aria-label="View Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span id="cart-label-text">Cart</span>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="brand-logo">Go<span class="logo-text-fresh">Fresh</span></span>
+        <button class="drawer-close-btn" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-link" data-close-drawer>Home</a>
+        <a href="#goods" class="mobile-nav-link" data-close-drawer>Shop Goods</a>
+        <a href="#marketplace" class="mobile-nav-link" data-close-drawer onclick="setTimeout(() => { const el = document.getElementById('marketplace-search-input'); if(el){ el.focus(); el.closest('.search-box-wrap')?.classList.add('pulse-highlight'); } }, 300);">Search Produce 🔍</a>
+        <a href="#how-it-works" class="mobile-nav-link" data-close-drawer>How It Works</a>
+        <a href="#about" class="mobile-nav-link" data-close-drawer>Who We Are</a>
+        <a href="#footer-contact" class="mobile-nav-link" data-close-drawer>Contact</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: auto;">
+        <button class="btn btn-milkish btn-block" id="mobile-join-farmer-btn">Join as a Farmer</button>
+        <button class="btn btn-darkgreen btn-block" id="mobile-join-buyer-btn">Join as a Buyer</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         HERO SECTION (Cinematic Editorial, Inspired by Andrews Bodega)
+         ======================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="container-wide">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Content -->
+          <div class="hero-content">
+            <div class="hero-pill-badge">
+              <span>✦ Direct Farm-To-Table Marketplace · Nigeria</span>
+            </div>
+
+            <h1 class="hero-headline">
+              Fresh From The Farm.<br>
+              <span class="accent">Straight To Your Table.</span>
+            </h1>
+
+            <p class="hero-supporting-text">
+              GoFresh connects you with fresh local produce while helping farmers reach more people. Harvested at dawn, sold without middlemen, delivered within 24 hours.
+            </p>
+
+            <!-- CTA Buttons matching handwritten sketches -->
+            <div class="hero-cta-group">
+              <div class="hero-primary-cta">
+                <a href="#goods" class="btn btn-primary btn-lg" id="hero-check-goods-btn">
+                  <span>Check Our Goods</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Two distinct user path buttons (milkish & dark green per sketch 2) -->
+              <div class="hero-role-buttons">
+                <span class="hero-role-divider">Or get started:</span>
+                <button class="btn btn-milkish" id="hero-join-farmer-btn">
+                  Join as a Farmer
+                </button>
+                <button class="btn btn-darkgreen" id="hero-join-buyer-btn">
+                  Join as a Buyer
+                </button>
+              </div>
+            </div>
+
+            <!-- Stats strip -->
+            <div class="hero-stats-strip">
+              <div class="hero-stat-item">
+                <span class="hero-stat-number">350+</span>
+                <span class="hero-stat-label">Verified Local Farmers</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-number">&lt;24 hrs</span>
+                <span class="hero-stat-label">Harvest To Doorstep</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-number">100%</span>
+                <span class="hero-stat-label">Locally Grown In Nigeria</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Framing (Grace Okafor documentary photograph) -->
+          <div class="hero-visual-frame">
+            <div class="hero-image-wrapper">
+              <img src="assets/images/hero_farmer.jpg" alt="Grace Okafor smiling warmly holding a woven basket overflowing with fresh red Kaduna plum tomatoes on her organic farm" loading="eager" id="hero-image">
+              
+              <div class="hero-stamp-tag">
+                100% Organic Harvest
+              </div>
+
+              <!-- Interactive Floating Farmer Tag -->
+              <div class="hero-farmer-card" id="hero-farmer-card-trigger" title="Click to view Grace's full farmer profile">
+                <div class="hero-farmer-info">
+                  <img src="assets/images/farmer_grace.jpg" alt="Grace Okafor avatar" class="hero-farmer-avatar">
+                  <div>
+                    <h3 class="hero-farmer-name">Grace Okafor</h3>
+                    <p class="hero-farmer-location">📍 Kaduna State · Organic Tomato Specialist</p>
+                  </div>
+                </div>
+                <span class="hero-farmer-pill">View Profile →</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         MARQUEE HARVEST TICKER
+         ======================================================================= -->
+    <div class="harvest-marquee-section" aria-hidden="true">
+      <div class="marquee-content">
+        <span>✦ HARVESTED AT DAWN</span>
+        <span class="highlight">✦ 100% LOCAL NIGERIAN PRODUCE</span>
+        <span>✦ DIRECT FARMER COMPENSATION</span>
+        <span class="highlight">✦ BENUE WHITE YAMS</span>
+        <span>✦ SWEET OYO CITRUS</span>
+        <span class="highlight">✦ KANO GOLDEN GRAINS</span>
+        <span>✦ KADUNA PLUM TOMATOES</span>
+        <span class="highlight">✦ ZERO MIDDLEMEN</span>
+        <span>✦ HARVESTED AT DAWN</span>
+        <span class="highlight">✦ 100% LOCAL NIGERIAN PRODUCE</span>
+        <span>✦ DIRECT FARMER COMPENSATION</span>
+        <span class="highlight">✦ BENUE WHITE YAMS</span>
+        <span>✦ SWEET OYO CITRUS</span>
+        <span class="highlight">✦ KANO GOLDEN GRAINS</span>
+        <span>✦ KADUNA PLUM TOMATOES</span>
+        <span class="highlight">✦ ZERO MIDDLEMEN</span>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         PRODUCT CATEGORY DISCOVERY ("Check Our Goods" Panel)
+         ======================================================================= -->
+    <section class="category-discovery-section" id="goods">
+      <div class="container-wide">
+        <div class="category-header-wrap">
+          <span class="section-label">Browse By Food Category</span>
+          <h2 class="section-title">Check Our Goods</h2>
+          <p class="section-desc">
+            Directly from Nigeria's top agricultural belts. Select any category below to immediately filter and explore seasonal harvests.
+          </p>
+        </div>
+
+        <div class="category-discovery-grid" id="category-grid" role="tablist">
+          <!-- Dynamically generated category cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         PRODUCT MARKETPLACE (Editorial Visual Grid)
+         ======================================================================= -->
+    <section class="marketplace-section" id="marketplace">
+      <div class="container-wide">
+        
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+          <span class="section-label">Fresh Harvests Marketplace</span>
+          <h2 class="section-title" id="marketplace-heading">Available Local Produce</h2>
+          <p class="section-desc">
+            Browse goods posted directly by verified growers. Every item shows the farmer, origin farm, unit price in Naira, and real-time availability.
+          </p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="marketplace-filter-bar">
+          <div class="category-filter-pills" id="category-pills-bar">
+            <!-- Filter pills generated via JS -->
+          </div>
+
+          <div class="filter-controls-right">
+            <form class="search-box-wrap" id="marketplace-search-form" role="search" onsubmit="event.preventDefault();">
+              <span class="search-box-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input type="text" id="marketplace-search-input" placeholder="Search tomatoes, yam, fish, Kaduna..." aria-label="Search produce or location" autocomplete="off">
+              <button type="button" class="search-clear-btn" id="marketplace-search-clear" aria-label="Clear search" title="Clear search">✕</button>
+              <button type="submit" class="search-submit-btn" id="marketplace-search-btn" aria-label="Search produce" title="Click to search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Search</span>
+              </button>
+            </form>
+
+            <select id="marketplace-sort-select" class="sort-select" aria-label="Sort products">
+              <option value="featured">Featured First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Product Name (A-Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Grid (Asymmetrical Editorial Layout) -->
+        <div class="products-editorial-grid" id="products-grid">
+          <!-- Products rendered via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FARMER DASHBOARD SECTION (Available for Farmers)
+         ======================================================================= -->
+    <section class="farmer-dashboard-view" id="farmer-dashboard-section">
+      <div class="container">
+        
+        <div class="dashboard-banner">
+          <div>
+            <span class="sticker-tag secondary">Farmer Portal</span>
+            <h2 class="dashboard-farmer-title" id="dash-farmer-name">Welcome Back, Grace Okafor</h2>
+            <p class="dashboard-farmer-sub" id="dash-farm-name">📍 Grace's Organic Farm · Kaduna, Nigeria</p>
+          </div>
+          <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <button class="btn btn-accent" id="dash-add-product-btn">
+              <span>+ Add New Harvest</span>
+            </button>
+            <button class="btn btn-outline" style="border-color: #FAF8F2; color: #FAF8F2;" id="dash-view-public-btn">
+              View Public Marketplace
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard Metrics -->
+        <div class="dashboard-stats-grid">
+          <div class="dash-stat-card">
+            <div class="dash-stat-num" id="dash-stat-products">8</div>
+            <div class="dash-stat-lbl">Active Listed Produce</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-num">₦485,000</div>
+            <div class="dash-stat-lbl">Total Sales Revenue</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-num" id="dash-stat-orders">18</div>
+            <div class="dash-stat-lbl">Orders Fulfilled</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-num">4.9 ★</div>
+            <div class="dash-stat-lbl">Buyer Satisfaction</div>
+          </div>
+        </div>
+
+        <!-- Listed Products Table -->
+        <div class="dash-table-wrap">
+          <div class="dash-table-header">
+            <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;">My Active Produce Listings</h3>
+            <span style="font-size: 0.8125rem; color: var(--text-tertiary);">Real-time inventory sync</span>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Unit</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="dash-products-tbody">
+                <!-- Farmer products rows injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         WHO WE ARE / ABOUT SECTION (Editorial Documentary)
+         ======================================================================= -->
+    <section class="about-section" id="about">
+      <div class="container-wide">
+        <div class="about-grid">
+          
+          <div class="about-content">
+            <span class="section-label">Who We Are</span>
+            <h2 class="section-title">Bridging The Soil To The City.</h2>
+            
+            <blockquote class="about-quote">
+              "GoFresh is a platform built to make locally sourced food easier to discover, buy and enjoy while creating better opportunities for farmers."
+            </blockquote>
+
+            <p class="about-text">
+              For generations, agricultural distribution in Nigeria was tangled in costly broker networks, unnecessary storage delays, and price inflation. Farmers earned pennies while consumers paid top dollar for wilted produce.
+            </p>
+
+            <p class="about-text">
+              GoFresh rewrote the equation. We built a direct, transparent digital marketplace where local agricultural growers post directly from the field, and families, restaurants, and grocers receive pristine food straight to their tables within 24 hours of harvest.
+            </p>
+
+            <div class="about-stats-grid">
+              <div class="about-stat-card">
+                <div class="about-stat-value">92%</div>
+                <div class="about-stat-label">Higher Farmer Earnings Retained</div>
+              </div>
+              <div class="about-stat-card">
+                <div class="about-stat-value">&lt; 1%</div>
+                <div class="about-stat-label">Post-Harvest Spoilage Waste</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-wrap">
+            <img src="assets/images/community.jpg" alt="Nigerian farmers and young delivery partners packing fresh produce crates at sunrise in a clean rural distribution depot" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         WHAT WE DO SECTION (4 Distinct Visual Cards)
+         ======================================================================= -->
+    <section class="what-we-do-section" id="what-we-do">
+      <div class="container-wide">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <span class="section-label">Our Core Purpose</span>
+          <h2 class="section-title">What We Do</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Empowering the agricultural chain through transparency, fair trade, and modern digital logistics.
+          </p>
+        </div>
+
+        <div class="what-we-do-grid">
+          <!-- Card 1 -->
+          <div class="what-we-do-card">
+            <div class="what-we-do-icon-box">🤝</div>
+            <span class="sticker-tag" style="width: fit-content;">01 · Direct</span>
+            <h3 class="what-we-do-card-title">Connect Farmers</h3>
+            <p class="what-we-do-card-desc">
+              Connect local farmers with customers looking for fresh produce. No middlemen, no unfair price exploitation.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="what-we-do-card">
+            <div class="what-we-do-icon-box">📍</div>
+            <span class="sticker-tag dark" style="width: fit-content;">02 · Local</span>
+            <h3 class="what-we-do-card-title">Source Locally</h3>
+            <p class="what-we-do-card-desc">
+              Help buyers discover locally produced food from Nigeria's top farming communities: Kaduna, Kano, Benue, Oyo, and Plateau.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="what-we-do-card">
+            <div class="what-we-do-icon-box">🚚</div>
+            <span class="sticker-tag secondary" style="width: fit-content;">03 · Cold-Chain</span>
+            <h3 class="what-we-do-card-title">Deliver Fresh</h3>
+            <p class="what-we-do-card-desc">
+              Make it easier for fresh products to move from farm to table within 24 hours of being picked from the field.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="what-we-do-card">
+            <div class="what-we-do-icon-box">💚</div>
+            <span class="sticker-tag" style="width: fit-content;">04 · Impact</span>
+            <h3 class="what-we-do-card-title">Support Communities</h3>
+            <p class="what-we-do-card-desc">
+              Help create more sustainable economic opportunities and dignified livelihoods for local agricultural families.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         HOW IT WORKS (Interactive Dual Track: Buyers & Farmers)
+         ======================================================================= -->
+    <section class="how-it-works-section" id="how-it-works">
+      <div class="container-wide">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <span class="section-label">Simple &amp; Transparent</span>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Designed for convenience whether you are filling your kitchen or running an agricultural farm.
+          </p>
+
+          <div class="how-it-works-tabs" role="tablist">
+            <button class="how-tab-btn active" id="tab-buyer-flow" role="tab" aria-selected="true">
+              For Buyers
+            </button>
+            <button class="how-tab-btn" id="tab-farmer-flow" role="tab" aria-selected="false">
+              For Farmers
+            </button>
+          </div>
+        </div>
+
+        <!-- Buyer Steps -->
+        <div class="steps-editorial-track" id="steps-buyer-container">
+          <div class="step-card">
+            <span class="step-card-num">01</span>
+            <h3 class="step-card-title">Choose a Category</h3>
+            <p class="step-card-desc">Select grains, vegetables, seasonal fruits, tubers, fresh meat, or wild river fish.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">02</span>
+            <h3 class="step-card-title">Find Your Products</h3>
+            <p class="step-card-desc">Inspect real harvest dates, quantities, and origin details for every produce batch.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">03</span>
+            <h3 class="step-card-title">Choose a Farmer</h3>
+            <p class="step-card-desc">Read farmer stories, inspect certifications, and support specific growers.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">04</span>
+            <h3 class="step-card-title">Add to Cart</h3>
+            <p class="step-card-desc">Select your desired bushels, crates, or kilograms with clear upfront Naira pricing.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">05</span>
+            <h3 class="step-card-title">Order &amp; Enjoy</h3>
+            <p class="step-card-desc">Fast, chilled doorstep delivery straight from the grower's field to your table.</p>
+          </div>
+        </div>
+
+        <!-- Farmer Steps (Hidden by default, switched via tab) -->
+        <div class="steps-editorial-track" id="steps-farmer-container" style="display: none;">
+          <div class="step-card">
+            <span class="step-card-num">01</span>
+            <h3 class="step-card-title">Create Your Profile</h3>
+            <p class="step-card-desc">Sign up with your details and introduce your farming background.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">02</span>
+            <h3 class="step-card-title">Add Your Farm</h3>
+            <p class="step-card-desc">Specify your farm location, soil type, and sustainable practices.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">03</span>
+            <h3 class="step-card-title">Upload Products</h3>
+            <p class="step-card-desc">Set your own prices per unit, upload harvest photos, and set available stock.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">04</span>
+            <h3 class="step-card-title">Receive Orders</h3>
+            <p class="step-card-desc">Get notified directly when buyers place orders for your farm produce.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">05</span>
+            <h3 class="step-card-title">Sell Directly</h3>
+            <p class="step-card-desc">Our cold-chain pickup handles transit while funds deposit directly into your account.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       SITE FOOTER (Deep Forest Green #183A2A, per user sketch & prompt)
+       ======================================================================= -->
+  <footer class="site-footer" id="footer-contact">
+    <div class="container-wide">
+      <div class="footer-grid">
+        
+        <!-- Brand & Tagline -->
+        <div>
+          <div class="footer-brand-title">GoFresh</div>
+          <p class="footer-tagline">
+            Fresh from local farms. Straight to your table.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+            <a href="https://facebook.com" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+            <a href="https://x.com" class="footer-social-btn" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">✖</a>
+            <a href="https://tiktok.com" class="footer-social-btn" aria-label="TikTok" target="_blank" rel="noopener noreferrer">🎵</a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#goods" class="footer-link">Shop All Goods</a>
+            <a href="#how-it-works" class="footer-link">How It Works</a>
+            <a href="#about" class="footer-link">Who We Are</a>
+            <a href="#what-we-do" class="footer-link">What We Do</a>
+          </div>
+        </div>
+
+        <!-- Food Categories -->
+        <div>
+          <h4 class="footer-col-title">Categories</h4>
+          <div class="footer-links-list">
+            <a href="#goods" class="footer-link" data-filter="vegetables">Vegetables</a>
+            <a href="#goods" class="footer-link" data-filter="grains">Grains &amp; Cereals</a>
+            <a href="#goods" class="footer-link" data-filter="tubers">Tubers &amp; Roots</a>
+            <a href="#goods" class="footer-link" data-filter="fruits">Seasonal Fruits</a>
+            <a href="#goods" class="footer-link" data-filter="meat">Farm Meat</a>
+            <a href="#goods" class="footer-link" data-filter="fish">River Fish &amp; Seafood</a>
+          </div>
+        </div>
+
+        <!-- Fictional Demo Contact Info (Per prompt requirement) -->
+        <div>
+          <h4 class="footer-col-title">Contact &amp; Hubs</h4>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <div>
+              <strong>Email Us:</strong><br>
+              <a href="mailto:hello@gofresh.example">hello@gofresh.example</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <div>
+              <strong>Helpline:</strong><br>
+              <a href="tel:+2348000000000">+234 800 000 0000</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div>
+              <strong>Distribution Hubs:</strong><br>
+              Kaduna Agri-Center &amp; Ikeja Depot, Lagos
+            </div>
+          </div>
+          <p class="footer-demo-disclaimer">
+            * Note: Contact details and hub locations shown are clearly labeled demo placeholders for this GoFresh prototype.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 GoFresh Agriculture Technologies. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Farmer Fair Trade Code</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       CART DRAWER
+       ======================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" aria-hidden="true">
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">
+          <span>🛒 Your Fresh Harvest</span>
+          <span class="sticker-tag" id="drawer-item-count">0 items</span>
+        </h3>
+        <button class="drawer-close-btn" id="cart-drawer-close" aria-label="Close cart">✕</button>
+      </div>
+
+      <div class="cart-drawer-body" id="cart-drawer-body">
+        <!-- Delivery threshold helper -->
+        <div class="delivery-threshold-bar" id="delivery-bar">
+          <div class="delivery-threshold-text">
+            <span id="delivery-text-msg">Add ₦35,000 for FREE Farm Delivery</span>
+            <span id="delivery-percent-val">0%</span>
+          </div>
+          <div class="delivery-progress-track">
+            <div class="delivery-progress-fill" id="delivery-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Cart items list container -->
+        <div id="cart-items-container" style="display: flex; flex-direction: column; gap: 1rem;">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <div class="cart-drawer-footer" id="cart-drawer-footer">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-val">₦0</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Cold-Chain Delivery</span>
+          <span id="cart-delivery-val">₦1,800</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>Total</span>
+          <span id="cart-total-val">₦0</span>
+        </div>
+
+        <button class="btn btn-primary btn-block btn-lg" id="cart-checkout-btn">
+          Proceed to Checkout →
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- =======================================================================
+       AUTH / ROLE SELECTION MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="auth-modal" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-label="Account Access">
+      <div class="modal-header">
+        <h3 class="modal-title" id="auth-modal-title">Join GoFresh</h3>
+        <button class="drawer-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; background: var(--surface-muted); padding: 4px; border-radius: var(--radius-pill);">
+          <button class="btn btn-sm btn-block active" id="auth-tab-buyer" style="background: var(--dark-green); color: #fff;">Join as Buyer</button>
+          <button class="btn btn-sm btn-block" id="auth-tab-farmer" style="color: var(--text-primary);">Join as Farmer</button>
+        </div>
+
+        <form id="auth-form">
+          <div class="form-group">
+            <label class="form-label" for="auth-name">Full Name</label>
+            <input type="text" class="form-input" id="auth-name" placeholder="e.g. Babatunde Alabi" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auth-email">Gmail / Email Address</label>
+            <input type="email" class="form-input" id="auth-email" placeholder="e.g. babatunde@gmail.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auth-password">Password</label>
+            <input type="password" class="form-input" id="auth-password" placeholder="Create a secure password" required minlength="6">
+            <p class="form-hint">* Frontend prototype session: safely managed in local storage.</p>
+          </div>
+
+          <button type="submit" class="btn btn-darkgreen btn-block btn-lg" id="auth-submit-btn" style="margin-top: 1.5rem;">
+            Create Buyer Account &amp; Shop →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       FARMER ONBOARDING 5-STEP WIZARD MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="farmer-onboarding-modal" aria-hidden="true">
+    <div class="modal-container large" role="dialog" aria-modal="true" aria-label="Farmer Onboarding">
+      <div class="modal-header">
+        <div>
+          <span class="sticker-tag secondary">Step-by-Step Onboarding</span>
+          <h3 class="modal-title" style="margin-top: 0.25rem;">Set Up Your Farm &amp; First Harvest</h3>
+        </div>
+        <button class="drawer-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Step progress indicator -->
+        <div class="wizard-steps-track">
+          <div class="wizard-step-node active" id="step-node-1">
+            <div class="step-circle">1</div>
+            <span class="step-label">Personal</span>
+          </div>
+          <div class="wizard-step-node" id="step-node-2">
+            <div class="step-circle">2</div>
+            <span class="step-label">Farm</span>
+          </div>
+          <div class="wizard-step-node" id="step-node-3">
+            <div class="step-circle">3</div>
+            <span class="step-label">Uploads</span>
+          </div>
+          <div class="wizard-step-node" id="step-node-4">
+            <div class="step-circle">4</div>
+            <span class="step-label">Product</span>
+          </div>
+          <div class="wizard-step-node" id="step-node-5">
+            <div class="step-circle">5</div>
+            <span class="step-label">Review</span>
+          </div>
+        </div>
+
+        <form id="farmer-wizard-form">
+          <!-- Step 1: Personal Info -->
+          <div class="wizard-step-panel" id="wizard-panel-1">
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem;">Step 1: Personal Information</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" id="ob-farmer-name" placeholder="e.g. Grace Okafor" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" id="ob-farmer-email" placeholder="e.g. grace@gmail.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Phone Number (WhatsApp)</label>
+                <input type="tel" class="form-input" id="ob-farmer-phone" placeholder="e.g. +234 803 123 4567" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">State / Town Location</label>
+                <input type="text" class="form-input" id="ob-farmer-location" placeholder="e.g. Zaria, Kaduna" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Farm Info -->
+          <div class="wizard-step-panel" id="wizard-panel-2" style="display: none;">
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem;">Step 2: Farm Details</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Farm Name</label>
+                <input type="text" class="form-input" id="ob-farm-name" placeholder="e.g. Grace's Organic Farm">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Farming Type</label>
+                <select class="form-select" id="ob-farming-type">
+                  <option value="Horticulture & Vegetables">Horticulture &amp; Vegetables</option>
+                  <option value="Grains & Legumes">Grains &amp; Legumes</option>
+                  <option value="Tuber & Root Crops">Tuber &amp; Root Crops</option>
+                  <option value="Fruit Orchard">Fruit Orchard</option>
+                  <option value="Fisheries & Aquaculture">Fisheries &amp; Aquaculture</option>
+                  <option value="Livestock & Poultry">Livestock &amp; Poultry</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Short Farm Bio &amp; Story</label>
+              <textarea class="form-textarea" rows="3" id="ob-farm-bio" placeholder="Describe your farm, soil care, harvesting methods, and commitment to fresh produce..."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 3: Upload Farm / Produce Images -->
+          <div class="wizard-step-panel" id="wizard-panel-3" style="display: none;">
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem;">Step 3: Upload Farm &amp; Produce Images</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+              Upload high-quality pictures of your farm, crops, or recent harvests. Previews appear immediately below.
+            </p>
+            
+            <div class="image-upload-box" id="ob-upload-box">
+              <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📸</div>
+              <div style="font-weight: 700; color: var(--dark-green);">Click to select or drop farm images</div>
+              <div style="font-size: 0.8125rem; color: var(--text-tertiary); margin-top: 0.25rem;">JPG, PNG up to 10MB</div>
+              <input type="file" id="ob-file-input" accept="image/*" multiple style="display: none;">
+            </div>
+
+            <div class="image-upload-preview-grid" id="ob-preview-grid">
+              <!-- Live preview thumbs inserted via JS -->
+            </div>
+          </div>
+
+          <!-- Step 4: Add First Product -->
+          <div class="wizard-step-panel" id="wizard-panel-4" style="display: none;">
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem;">Step 4: Add Your First Harvest Listing</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-input" id="ob-prod-name" placeholder="e.g. Fresh Ripe Plum Tomatoes">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category</label>
+                <select class="form-select" id="ob-prod-category">
+                  <option value="vegetables">Vegetables</option>
+                  <option value="grains">Grains</option>
+                  <option value="fruits">Fruits</option>
+                  <option value="tubers">Tubers</option>
+                  <option value="meat">Meat</option>
+                  <option value="fish">Fish</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Price (₦ Naira)</label>
+                <input type="number" class="form-input" id="ob-prod-price" placeholder="e.g. 4500" min="100">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Unit of Measure</label>
+                <input type="text" class="form-input" id="ob-prod-unit" placeholder="e.g. Per large cane basket (~8kg)">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Available Quantity</label>
+              <input type="number" class="form-input" id="ob-prod-qty" placeholder="e.g. 35" min="1">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Harvest Description</label>
+              <textarea class="form-textarea" rows="2" id="ob-prod-desc" placeholder="Details about this batch, taste profile, or cooking recommendation..."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 5: Review & Publish -->
+          <div class="wizard-step-panel" id="wizard-panel-5" style="display: none;">
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem;">Step 5: Review Everything</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+              Inspect your details before publishing directly to the public GoFresh marketplace.
+            </p>
+
+            <div style="background: var(--surface-card); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;" id="ob-review-card">
+              <!-- Review summary generated dynamically -->
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="wizard-prev-btn" style="display: none;">Back</button>
+        <button type="button" class="btn btn-primary" id="wizard-next-btn">Continue →</button>
+        <button type="button" class="btn btn-darkgreen" id="wizard-submit-btn" style="display: none;">Publish My Products 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       FARMER PROFILE MODAL (Viewable by buyers)
+       ======================================================================= -->
+  <div class="modal-overlay" id="farmer-profile-modal" aria-hidden="true">
+    <div class="modal-container xlarge" role="dialog" aria-modal="true" aria-label="Farmer Profile">
+      <div class="modal-header">
+        <span class="sticker-tag secondary">Verified Local Grower</span>
+        <button class="drawer-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="farmer-profile-modal-body">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       PRODUCT QUICK VIEW MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="product-detail-modal" aria-hidden="true">
+    <div class="modal-container large" role="dialog" aria-modal="true" aria-label="Product Details">
+      <div class="modal-header">
+        <span class="sticker-tag" id="modal-prod-badge">Harvested Fresh</span>
+        <button class="drawer-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="product-detail-modal-body">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       CHECKOUT MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="checkout-modal" aria-hidden="true">
+    <div class="modal-container large" role="dialog" aria-modal="true" aria-label="Checkout">
+      <div class="modal-header">
+        <h3 class="modal-title">Farm-To-Doorstep Delivery</h3>
+        <button class="drawer-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="checkout-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="co-name">Recipient Full Name</label>
+              <input type="text" class="form-input" id="co-name" placeholder="e.g. Babatunde Alabi" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="co-phone">Recipient Phone (For Dispatch)</label>
+              <input type="tel" class="form-input" id="co-phone" placeholder="e.g. +234 812 345 6789" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="co-address">Delivery Address</label>
+            <input type="text" class="form-input" id="co-address" placeholder="Street address, house number, area" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="co-city">City / State</label>
+              <input type="text" class="form-input" id="co-city" placeholder="e.g. Lekki Phase 1, Lagos" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="co-delivery-window">Preferred Delivery Window</label>
+              <select class="form-select" id="co-delivery-window">
+                <option value="Tomorrow Morning (8:00 AM - 12:00 PM)">Tomorrow Morning (8:00 AM - 12:00 PM)</option>
+                <option value="Tomorrow Afternoon (1:00 PM - 5:00 PM)">Tomorrow Afternoon (1:00 PM - 5:00 PM)</option>
+                <option value="Scheduled Farm Day (Thursday Morning)">Scheduled Farm Day (Thursday Morning)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label class="form-label">Payment Method</label>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+              <label style="border: 1.5px solid var(--border-medium); border-radius: var(--radius-md); padding: 0.85rem; text-align: center; cursor: pointer; background: var(--surface-card);" class="payment-opt">
+                <input type="radio" name="payment" value="Bank Transfer" checked>
+                <div style="font-weight: 700; font-size: 0.8125rem; margin-top: 0.35rem;">Direct Bank Transfer</div>
+              </label>
+              <label style="border: 1.5px solid var(--border-medium); border-radius: var(--radius-md); padding: 0.85rem; text-align: center; cursor: pointer; background: var(--surface-card);" class="payment-opt">
+                <input type="radio" name="payment" value="Debit Card">
+                <div style="font-weight: 700; font-size: 0.8125rem; margin-top: 0.35rem;">Debit Card</div>
+              </label>
+              <label style="border: 1.5px solid var(--border-medium); border-radius: var(--radius-md); padding: 0.85rem; text-align: center; cursor: pointer; background: var(--surface-card);" class="payment-opt">
+                <input type="radio" name="payment" value="Pay on Delivery">
+                <div style="font-weight: 700; font-size: 0.8125rem; margin-top: 0.35rem;">Pay on Delivery</div>
+              </label>
+            </div>
+          </div>
+
+          <div style="background: var(--surface-card); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.15rem; color: var(--dark-green);">
+              <span>Total Payable</span>
+              <span id="co-modal-total">₦0</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+            Confirm &amp; Place Order 🚚
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       ORDER CONFIRMATION MODAL
+       ======================================================================= -->
+  <div class="modal-overlay" id="order-confirmed-modal" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-label="Order Confirmation">
+      <div class="modal-body" style="text-align: center; padding: 3rem 2rem;">
+        <div style="width: 72px; height: 72px; border-radius: 50%; background-color: var(--secondary); color: var(--dark-green); font-size: 2.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+          ✓
+        </div>
+        <span class="sticker-tag" style="margin-bottom: 0.75rem;">Order Successfully Dispatched</span>
+        <h3 class="modal-title" style="font-size: 1.75rem; margin-bottom: 0.5rem;">Thank You For Sourcing Fresh!</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9375rem;">
+          Your order has been forwarded to the local farmers. They will harvest and crate your goods for early morning transit.
+        </p>
+
+        <div style="background: var(--surface-card); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; text-align: left;" id="order-confirmed-summary">
+          <!-- Summary inserted via JS -->
+        </div>
+
+        <button class="btn btn-darkgreen btn-lg btn-block" id="order-continue-shopping-btn">
+          Continue Exploring Goods →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
