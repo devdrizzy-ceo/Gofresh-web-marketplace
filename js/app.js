@@ -488,20 +488,20 @@ function openFarmerProfileModal(farmerId) {
     <div style="display: flex; flex-direction: column; gap: 2rem;">
       
       <!-- Farmer Profile Header -->
-      <div style="display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; align-items: center;">
-        <img src="${farmer.avatar}" alt="${farmer.name}" style="width: 140px; height: 140px; border-radius: var(--radius-lg); object-fit: cover; border: 3px solid var(--secondary);">
-        <div>
+      <div class="modal-farmer-header">
+        <img src="${farmer.avatar}" alt="${farmer.name}" class="modal-farmer-avatar">
+        <div class="modal-farmer-info">
           <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-            <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 800; color: var(--dark-green);">${farmer.name}</h2>
+            <h2 class="modal-farmer-name">${farmer.name}</h2>
             <span class="sticker-tag" style="font-size: 0.7rem;">✓ Verified Local Grower</span>
           </div>
           <p style="font-weight: 700; color: var(--primary); margin-top: 0.2rem;">${farmer.farmName}</p>
           <p style="color: var(--text-secondary); font-size: 0.875rem;">📍 ${farmer.location} · Member since ${farmer.joinedDate}</p>
           
-          <div style="display: flex; gap: 1.5rem; margin-top: 0.75rem; font-size: 0.875rem;">
-            <span>⭐ <strong>${farmer.rating}</strong> (${farmer.reviewsCount} reviews)</span>
-            <span>🌱 <strong>${farmer.acres} Acres</strong> Cultivated</span>
-            <span>📦 <strong>${farmer.totalHarvests}+</strong> Harvests Sold</span>
+          <div class="modal-farmer-stats">
+            <span class="modal-farmer-stat-pill">⭐ <strong>${farmer.rating}</strong> (${farmer.reviewsCount} reviews)</span>
+            <span class="modal-farmer-stat-pill">🌱 <strong>${farmer.acres} Acres</strong></span>
+            <span class="modal-farmer-stat-pill">📦 <strong>${farmer.totalHarvests}+</strong> Harvests</span>
           </div>
         </div>
       </div>
@@ -521,7 +521,7 @@ function openFarmerProfileModal(farmerId) {
           <span style="font-size: 0.8125rem; color: var(--text-tertiary);">Direct harvest</span>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem;">
+        <div class="modal-farmer-products-grid">
           ${farmerProducts.map(p => `
             <div style="background: var(--surface-card); border: 1px solid var(--border-medium); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
               <img src="${p.image}" alt="${p.name}" style="width: 100%; height: 160px; object-fit: cover;">
@@ -560,11 +560,11 @@ function openProductQuickView(productId) {
   if (badgeEl) badgeEl.textContent = prod.badge || 'Fresh Farm Harvest';
 
   modalBody.innerHTML = `
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+    <div class="modal-product-grid">
       
       <!-- Product Image -->
-      <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-medium); background: var(--surface-muted);">
-        <img src="${prod.image}" alt="${prod.name}" style="width: 100%; height: 360px; object-fit: cover;">
+      <div class="modal-product-image-wrap">
+        <img src="${prod.image}" alt="${prod.name}">
       </div>
 
       <!-- Details -->
@@ -601,7 +601,7 @@ function openProductQuickView(productId) {
         </div>
 
         <!-- Quantity Picker & Add to Cart -->
-        <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+        <div class="modal-product-cta">
           <div class="qty-stepper" style="height: 44px;">
             <button class="qty-btn" id="modal-qty-minus" style="width: 36px; height: 100%;">-</button>
             <span class="qty-num" id="modal-qty-val" style="padding: 0 1rem; font-size: 1rem;">1</span>

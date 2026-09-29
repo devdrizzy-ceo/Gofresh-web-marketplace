@@ -267,3 +267,67 @@ h4 {
   white-space: nowrap;
   border: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Responsive Design Enhancements (Mobile, Tablet, and Touchscreens)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  :root {
+    --header-height: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 66px;
+  }
+
+  .container {
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .container-wide {
+    padding-left: clamp(1rem, 4vw, 1.75rem);
+    padding-right: clamp(1rem, 4vw, 1.75rem);
+  }
+
+  /* Prevent automatic iOS Safari zoom-in on text field focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  .container, .container-wide {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+    line-height: 1.15;
+  }
+
+  h2, .section-title {
+    font-size: clamp(1.5rem, 6.5vw, 2.1rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 5vw, 1.45rem);
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+}
+
